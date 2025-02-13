@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct DragDropPuzzleView: View {
-    @State private var wordPosition: CGPoint = CGPoint(x: 50, y: 300)
-    let targetPosition = CGPoint(x: 200, y: 300)
+    @State private var wordPosition: CGPoint = CGPoint(x: 50, y: 300) //指の位置
+    let targetPosition = CGPoint(x: 200, y: 300) //ターゲットの位置(単語の位置)
 
     var body: some View {
         ZStack {
