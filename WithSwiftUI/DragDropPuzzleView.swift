@@ -7,73 +7,73 @@
 
 import SwiftUI
 
-struct DragDropPuzzleView: View {
-    @State private var wordPositionColor: CGPoint = CGPoint(x: 50, y: 300)
-    @State private var wordPositionSwift: CGPoint = CGPoint(x: 50, y: 400)
+struct DraggableWord: View {
+    @State private var position: CGPoint
+    let word: String
+    let targetPosition: CGPoint
 
-    let targetPositionColor = CGPoint(x: 200, y: 300)
-    let targetPositionSwift = CGPoint(x: 200, y: 400)
+    init(word: String, startPosition: CGPoint, targetPosition: CGPoint) {
+        self.word = word
+        self._position = State(initialValue: startPosition)
+        self.targetPosition = targetPosition
+    }
+
+    var body: some View {
+        Text(word)
+            .font(.largeTitle)
+            .bold()
+            .foregroundColor(.blue)
+            .position(position)
+            .gesture(
+                DragGesture()
+                    .onChanged { gesture in
+                        self.position = gesture.location
+                    }
+                    .onEnded { _ in
+                        withAnimation {
+                            if distance(from: position, to: targetPosition) < 30 {
+                                position = targetPosition // スナップ
+                            } else {
+                                position = CGPoint(x: targetPosition.x - 150, y: targetPosition.y) // 元の位置に戻す
+                            }
+                        }
+                    }
+            )
+    }
+
+    // 距離計算関数
+    func distance(from: CGPoint, to: CGPoint) -> CGFloat {
+        sqrt(pow(from.x - to.x, 2) + pow(from.y - to.y, 2))
+    }
+}
+
+struct DragDropPuzzleView: View {
+    let words: [(word: String, target: CGPoint)] = [
+        ("Color", CGPoint(x: 200, y: 300)),
+        ("Swift", CGPoint(x: 200, y: 400)),
+        ("View", CGPoint(x: 200, y: 500)),
+        ("Frame", CGPoint(x: 200, y: 600))
+    ]
 
     var body: some View {
         ZStack {
             // 正しい位置を示すガイド
-            Text("_____") // Colorの場所
-                .font(.largeTitle)
-                .position(targetPositionColor)
-                .foregroundColor(.gray)
+            ForEach(words, id: \.word) { wordData in
+                Text("_____")
+                    .font(.largeTitle)
+                    .position(wordData.target)
+                    .foregroundColor(.gray)
+            }
 
-            Text("_____") // Swiftの場所
-                .font(.largeTitle)
-                .position(targetPositionSwift)
-                .foregroundColor(.gray)
-
-            // ドラッグ可能な単語1 (Color)
-            Text("Color")
-                .font(.largeTitle)
-                .bold()
-                .foregroundColor(.blue)
-                .position(wordPositionColor)
-                .gesture(
-                    DragGesture()
-                        .onChanged { gesture in
-                            self.wordPositionColor = gesture.location
-                        }
-                        .onEnded { _ in
-                            // 正しい場所に近ければスナップ、それ以外は元の場所に戻る
-                            if distance(from: wordPositionColor, to: targetPositionColor) < 30 {
-                                wordPositionColor = targetPositionColor
-                            } else {
-                                wordPositionColor = CGPoint(x: 50, y: 300) // 元の位置に戻す
-                            }
-                        }
+            // ドラッグ可能な単語
+            ForEach(words, id: \.word) { wordData in
+                DraggableWord(
+                    word: wordData.word,
+                    startPosition: CGPoint(x: wordData.target.x - 150, y: wordData.target.y),
+                    targetPosition: wordData.target
                 )
-
-            // ドラッグ可能な単語2 (Swift)
-            Text("Swift")
-                .font(.largeTitle)
-                .bold()
-                .foregroundColor(.red)
-                .position(wordPositionSwift)
-                .gesture(
-                    DragGesture()
-                        .onChanged { gesture in
-                            self.wordPositionSwift = gesture.location
-                        }
-                        .onEnded { _ in
-                            // 正しい場所に近ければスナップ、それ以外は元の位置に戻る
-                            if distance(from: wordPositionSwift, to: targetPositionSwift) < 30 {
-                                wordPositionSwift = targetPositionSwift
-                            } else {
-                                wordPositionSwift = CGPoint(x: 50, y: 400) // 元の位置に戻す
-                            }
-                        }
-                )
+            }
         }
-    }
-
-    // 距離計算
-    func distance(from: CGPoint, to: CGPoint) -> CGFloat {
-        sqrt(pow(from.x - to.x, 2) + pow(from.y - to.y, 2))
     }
 }
 
