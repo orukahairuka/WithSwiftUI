@@ -12,16 +12,16 @@ struct DraggableWord: View {
     let word: String
     let targetPosition: CGPoint
 
-    init(word: String, startPosition: CGPoint, targetPosition: CGPoint) {
+    init(word: String, startPosition: CGPoint, targetX: CGFloat, targetY: CGFloat) {
         self.word = word
-        self._position = State(initialValue: startPosition)
-        self.targetPosition = targetPosition
+        self._position = State(initialValue: CGPoint(x: targetX - 150, y: targetY)) // 初期位置
+        self.targetPosition = CGPoint(x: targetX, y: targetY) // 正解位置
     }
 
     var body: some View {
         Text(word)
-            .font(.largeTitle)
             .bold()
+            .font(.largeTitle)
             .foregroundColor(.blue)
             .position(position)
             .gesture(
@@ -48,32 +48,39 @@ struct DraggableWord: View {
 }
 
 struct DragDropPuzzleView: View {
-    let words: [(word: String, target: CGPoint)] = [
-        ("Color", CGPoint(x: 200, y: 300)),
-        ("Swift", CGPoint(x: 200, y: 400)),
-        ("View", CGPoint(x: 200, y: 500)),
-        ("Frame", CGPoint(x: 200, y: 600))
+    let words: [(word: String, targetX: CGFloat, targetY: CGFloat)] = [
+        ("Color", 200, 300),
+        ("Swift", 250, 400),
+        ("View", 300, 500),
+        ("Frame", 350, 600)
     ]
 
     var body: some View {
         ZStack {
-            // 正しい位置を示すガイド
+            // 正しい位置を示すガイド（空欄の場所）
             ForEach(words, id: \.word) { wordData in
                 Text("_____")
+                    .bold()
                     .font(.largeTitle)
-                    .position(wordData.target)
+                    .position(x: wordData.targetX, y: wordData.targetY)
                     .foregroundColor(.gray)
             }
 
-            // ドラッグ可能な単語
+            // ドラッグ可能な単語（それぞれの位置に設定）
             ForEach(words, id: \.word) { wordData in
                 DraggableWord(
                     word: wordData.word,
-                    startPosition: CGPoint(x: wordData.target.x - 150, y: wordData.target.y),
-                    targetPosition: wordData.target
+                    startPosition: CGPoint(x: wordData.targetX - 150, y: wordData.targetY),
+                    targetX: wordData.targetX,
+                    targetY: wordData.targetY
                 )
             }
         }
     }
 }
 
+struct DragDropPuzzleView_Previews: PreviewProvider {
+    static var previews: some View {
+        DragDropPuzzleView()
+    }
+}
