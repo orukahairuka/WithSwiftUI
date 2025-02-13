@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B5DF9F12D5B802B00F3FCEC /* WithSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5DF9F02D5B802B00F3FCEC /* WithSwiftUIApp.swift */; };
-		3B5DF9F32D5B802B00F3FCEC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5DF9F22D5B802B00F3FCEC /* ContentView.swift */; };
+		3B5DF9F32D5B802B00F3FCEC /* DragDropPuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5DF9F22D5B802B00F3FCEC /* DragDropPuzzleView.swift */; };
 		3B5DF9F52D5B802D00F3FCEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B5DF9F42D5B802D00F3FCEC /* Assets.xcassets */; };
 		3B5DF9F82D5B802D00F3FCEC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B5DF9F72D5B802D00F3FCEC /* Preview Assets.xcassets */; };
 		3B5DFA022D5B802D00F3FCEC /* WithSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5DFA012D5B802D00F3FCEC /* WithSwiftUITests.swift */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		3B5DF9ED2D5B802B00F3FCEC /* WithSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WithSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B5DF9F02D5B802B00F3FCEC /* WithSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithSwiftUIApp.swift; sourceTree = "<group>"; };
-		3B5DF9F22D5B802B00F3FCEC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3B5DF9F22D5B802B00F3FCEC /* DragDropPuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragDropPuzzleView.swift; sourceTree = "<group>"; };
 		3B5DF9F42D5B802D00F3FCEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B5DF9F72D5B802D00F3FCEC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3B5DF9FD2D5B802D00F3FCEC /* WithSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WithSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				3B5DF9F02D5B802B00F3FCEC /* WithSwiftUIApp.swift */,
-				3B5DF9F22D5B802B00F3FCEC /* ContentView.swift */,
+				3B5DF9F22D5B802B00F3FCEC /* DragDropPuzzleView.swift */,
 				3B5DF9F42D5B802D00F3FCEC /* Assets.xcassets */,
 				3B5DF9F62D5B802D00F3FCEC /* Preview Content */,
 			);
@@ -257,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B5DF9F32D5B802B00F3FCEC /* ContentView.swift in Sources */,
+				3B5DF9F32D5B802B00F3FCEC /* DragDropPuzzleView.swift in Sources */,
 				3B5DF9F12D5B802B00F3FCEC /* WithSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
