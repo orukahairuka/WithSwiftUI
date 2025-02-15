@@ -14,6 +14,7 @@
 		3B5DFA022D5B802D00F3FCEC /* WithSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5DFA012D5B802D00F3FCEC /* WithSwiftUITests.swift */; };
 		3B5DFA0C2D5B802D00F3FCEC /* WithSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5DFA0B2D5B802D00F3FCEC /* WithSwiftUIUITests.swift */; };
 		3B5DFA0E2D5B802D00F3FCEC /* WithSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5DFA0D2D5B802D00F3FCEC /* WithSwiftUIUITestsLaunchTests.swift */; };
+		3B83DDFF2D605F1000F87AB4 /* DraggableWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B83DDFE2D605F1000F87AB4 /* DraggableWord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		3B5DFA072D5B802D00F3FCEC /* WithSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WithSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B5DFA0B2D5B802D00F3FCEC /* WithSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithSwiftUIUITests.swift; sourceTree = "<group>"; };
 		3B5DFA0D2D5B802D00F3FCEC /* WithSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3B83DDFE2D605F1000F87AB4 /* DraggableWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableWord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				3B5DF9F22D5B802B00F3FCEC /* ContentView.swift */,
 				3B5DF9F42D5B802D00F3FCEC /* Assets.xcassets */,
 				3B5DF9F62D5B802D00F3FCEC /* Preview Content */,
+				3B83DDFE2D605F1000F87AB4 /* DraggableWord.swift */,
 			);
 			path = WithSwiftUI;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B5DF9F32D5B802B00F3FCEC /* ContentView.swift in Sources */,
+				3B83DDFF2D605F1000F87AB4 /* DraggableWord.swift in Sources */,
 				3B5DF9F12D5B802B00F3FCEC /* WithSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
