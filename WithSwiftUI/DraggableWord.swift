@@ -39,7 +39,7 @@ struct DragDropPuzzleView: View {
                         }
                         .onEnded { _ in
                             // もし近い場所にドロップされたらスナップ
-                            if distance(from: wordPosition, to: targetPosition) < 30 {
+                            if distance(from: wordPosition, to: targetPosition) < 60 {
                                 wordPosition = targetPosition
                             }
                         }
