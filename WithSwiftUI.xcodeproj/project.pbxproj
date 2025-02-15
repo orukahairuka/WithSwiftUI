@@ -17,6 +17,7 @@
 		3B83DDFF2D605F1000F87AB4 /* DraggableWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B83DDFE2D605F1000F87AB4 /* DraggableWord.swift */; };
 		3B83DE022D6061E800F87AB4 /* LvOneCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B83DE012D6061E800F87AB4 /* LvOneCodeView.swift */; };
 		3B83DE042D6061F900F87AB4 /* LvOneIPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B83DE032D6061F900F87AB4 /* LvOneIPhoneView.swift */; };
+		3BEC690B2D606580007F2991 /* LvOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEC690A2D606580007F2991 /* LvOneView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		3B83DDFE2D605F1000F87AB4 /* DraggableWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableWord.swift; sourceTree = "<group>"; };
 		3B83DE012D6061E800F87AB4 /* LvOneCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LvOneCodeView.swift; sourceTree = "<group>"; };
 		3B83DE032D6061F900F87AB4 /* LvOneIPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LvOneIPhoneView.swift; sourceTree = "<group>"; };
+		3BEC690A2D606580007F2991 /* LvOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LvOneView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +102,8 @@
 		3B5DF9EF2D5B802B00F3FCEC /* WithSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				3B83DE002D6061CF00F87AB4 /* LvOne */,
 				3B5DF9F02D5B802B00F3FCEC /* WithSwiftUIApp.swift */,
+				3B83DE002D6061CF00F87AB4 /* LvOne */,
 				3B5DF9F22D5B802B00F3FCEC /* ContentView.swift */,
 				3B5DF9F42D5B802D00F3FCEC /* Assets.xcassets */,
 				3B5DF9F62D5B802D00F3FCEC /* Preview Content */,
@@ -140,6 +142,7 @@
 			children = (
 				3B83DE012D6061E800F87AB4 /* LvOneCodeView.swift */,
 				3B83DE032D6061F900F87AB4 /* LvOneIPhoneView.swift */,
+				3BEC690A2D606580007F2991 /* LvOneView.swift */,
 			);
 			path = LvOne;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				3B83DE022D6061E800F87AB4 /* LvOneCodeView.swift in Sources */,
 				3B5DF9F32D5B802B00F3FCEC /* ContentView.swift in Sources */,
 				3B83DDFF2D605F1000F87AB4 /* DraggableWord.swift in Sources */,
+				3BEC690B2D606580007F2991 /* LvOneView.swift in Sources */,
 				3B83DE042D6061F900F87AB4 /* LvOneIPhoneView.swift in Sources */,
 				3B5DF9F12D5B802B00F3FCEC /* WithSwiftUIApp.swift in Sources */,
 			);

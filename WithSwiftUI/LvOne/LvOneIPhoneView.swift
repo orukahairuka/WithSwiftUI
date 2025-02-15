@@ -9,7 +9,21 @@ import SwiftUI
 
 struct LvOneIPhoneView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { geometry in
+            let screenWidth = geometry.size.width
+            let screenHeight = geometry.size.height
+
+            ZStack {
+                Image("IPhone")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: screenWidth * 0.85, height: screenHeight * 0.85)
+                Circle()
+                    .foregroundColor(.blue)
+                    .frame(width: screenWidth * 0.5, height: screenHeight * 0.5)
+            }
+            .frame(width: screenWidth, height: screenHeight)
+        }
     }
 }
 
