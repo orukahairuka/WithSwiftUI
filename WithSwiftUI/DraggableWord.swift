@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DragDropPuzzleView: View {
+struct DraggableWord: View {
     @State private var wordPosition: CGPoint
     let targetPosition: CGPoint
     let word: String
@@ -50,12 +50,5 @@ struct DragDropPuzzleView: View {
     // 距離計算
     func distance(from: CGPoint, to: CGPoint) -> CGFloat {
         sqrt(pow(from.x - to.x, 2) + pow(from.y - to.y, 2))
-    }
-}
-
-// プレビュー用
-struct DragDropPuzzleView_Previews: PreviewProvider {
-    static var previews: some View {
-        DragDropPuzzleView(word: "Color", wordPosition: CGPoint(x: 50, y: 300), targetPosition: CGPoint(x: 200, y: 300))
     }
 }
