@@ -11,22 +11,22 @@ struct DraggableWord: View {
     @State private var wordPosition: CGPoint
     let targetPosition: CGPoint
     let word: String
+    @Binding var correctWords: [String: Bool]
 
-    init(word: String, wordPosition: CGPoint, targetPosition: CGPoint) {
+    init(word: String, wordPosition: CGPoint, targetPosition: CGPoint, correctWords: Binding<[String: Bool]>) {
         self.word = word
         self._wordPosition = State(initialValue: wordPosition)
         self.targetPosition = targetPosition
+        self._correctWords = correctWords
     }
 
     var body: some View {
         ZStack {
-            // 正しい位置を示すガイド
             Text("_____")
                 .font(.largeTitle)
                 .position(targetPosition)
                 .foregroundColor(.gray)
 
-            // ドラッグ可能な単語
             Text(word)
                 .font(.largeTitle)
                 .bold()
@@ -38,16 +38,15 @@ struct DraggableWord: View {
                             self.wordPosition = gesture.location
                         }
                         .onEnded { _ in
-                            // もし近い場所にドロップされたらスナップ
                             if distance(from: wordPosition, to: targetPosition) < 60 {
                                 wordPosition = targetPosition
+                                correctWords[word] = true
                             }
                         }
                 )
         }
     }
 
-    // 距離計算
     func distance(from: CGPoint, to: CGPoint) -> CGFloat {
         sqrt(pow(from.x - to.x, 2) + pow(from.y - to.y, 2))
     }
