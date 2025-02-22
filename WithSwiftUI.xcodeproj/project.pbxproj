@@ -16,6 +16,7 @@
 		3B83DDFF2D605F1000F87AB4 /* DraggableWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B83DDFE2D605F1000F87AB4 /* DraggableWord.swift */; };
 		3B83DE022D6061E800F87AB4 /* LvOneCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B83DE012D6061E800F87AB4 /* LvOneCodeView.swift */; };
 		3B83DE042D6061F900F87AB4 /* LvOneIPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B83DE032D6061F900F87AB4 /* LvOneIPhoneView.swift */; };
+		3BC404332D6995E900C172B0 /* BearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC404322D6995E900C172B0 /* BearView.swift */; };
 		3BEC690B2D606580007F2991 /* LvOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEC690A2D606580007F2991 /* LvOneView.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		3B83DDFE2D605F1000F87AB4 /* DraggableWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableWord.swift; sourceTree = "<group>"; };
 		3B83DE012D6061E800F87AB4 /* LvOneCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LvOneCodeView.swift; sourceTree = "<group>"; };
 		3B83DE032D6061F900F87AB4 /* LvOneIPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LvOneIPhoneView.swift; sourceTree = "<group>"; };
+		3BC404322D6995E900C172B0 /* BearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearView.swift; sourceTree = "<group>"; };
 		3BEC690A2D606580007F2991 /* LvOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LvOneView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +142,7 @@
 				3B83DE012D6061E800F87AB4 /* LvOneCodeView.swift */,
 				3B83DE032D6061F900F87AB4 /* LvOneIPhoneView.swift */,
 				3BEC690A2D606580007F2991 /* LvOneView.swift */,
+				3BC404322D6995E900C172B0 /* BearView.swift */,
 			);
 			path = LvOne;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			files = (
 				3B83DE022D6061E800F87AB4 /* LvOneCodeView.swift in Sources */,
 				3B83DDFF2D605F1000F87AB4 /* DraggableWord.swift in Sources */,
+				3BC404332D6995E900C172B0 /* BearView.swift in Sources */,
 				3BEC690B2D606580007F2991 /* LvOneView.swift in Sources */,
 				3B83DE042D6061F900F87AB4 /* LvOneIPhoneView.swift in Sources */,
 				3B5DF9F12D5B802B00F3FCEC /* WithSwiftUIApp.swift in Sources */,
