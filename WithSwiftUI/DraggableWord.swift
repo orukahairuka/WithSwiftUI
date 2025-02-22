@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DraggableWord: View {
     @State private var wordPosition: CGPoint
+    @State private var isCorrect = false
     let targetPosition: CGPoint
     let word: String
     @Binding var correctWords: [String: Bool]
@@ -37,6 +38,7 @@ struct DraggableWord: View {
                     .foregroundColor(.blue)
                     .position(wordPosition)
                     .gesture(
+                        isCorrect ? nil : // 正解ならジェスチャーを無効化
                         DragGesture()
                             .onChanged { gesture in
                                 self.wordPosition = gesture.location
@@ -45,12 +47,13 @@ struct DraggableWord: View {
                                 if distance(from: wordPosition, to: targetPosition) < 60 {
                                     wordPosition = targetPosition
                                     correctWords[word] = true
+                                    isCorrect = true // 正解状態を記録
                                 }
                             }
                     )
 
                 // 正解メッセージ表示（デバッグ用）
-                if let isCorrect = correctWords[word], isCorrect {
+                if isCorrect {
                     Text("\(word) 正解！")
                         .font(.title)
                         .foregroundColor(.green)
