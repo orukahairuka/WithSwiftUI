@@ -44,6 +44,15 @@ struct DraggableWord: View {
                             }
                         }
                 )
+
+            // 正解メッセージ表示（デバッグ用）
+            if let isCorrect = correctWords[word], isCorrect {
+                Text("\(word) 正解！")
+                    .font(.title)
+                    .foregroundColor(.green)
+                    .position(x: targetPosition.x, y: targetPosition.y - 50)
+                    .transition(.opacity)
+            }
         }
     }
 
