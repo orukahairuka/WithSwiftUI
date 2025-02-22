@@ -21,37 +21,42 @@ struct DraggableWord: View {
     }
 
     var body: some View {
-        ZStack {
-            Text("_____")
-                .font(.largeTitle)
-                .position(targetPosition)
-                .foregroundColor(.gray)
+        GeometryReader { geometry in
+            let screenWidth = geometry.size.width
+            let screenHeight = geometry.size.height
 
-            Text(word)
-                .font(.largeTitle)
-                .bold()
-                .foregroundColor(.blue)
-                .position(wordPosition)
-                .gesture(
-                    DragGesture()
-                        .onChanged { gesture in
-                            self.wordPosition = gesture.location
-                        }
-                        .onEnded { _ in
-                            if distance(from: wordPosition, to: targetPosition) < 60 {
-                                wordPosition = targetPosition
-                                correctWords[word] = true
+            ZStack {
+                Text("_____")
+                    .font(.largeTitle)
+                    .position(targetPosition)
+                    .foregroundColor(.gray)
+
+                Text(word)
+                    .font(.largeTitle)
+                    .bold()
+                    .foregroundColor(.blue)
+                    .position(wordPosition)
+                    .gesture(
+                        DragGesture()
+                            .onChanged { gesture in
+                                self.wordPosition = gesture.location
                             }
-                        }
-                )
+                            .onEnded { _ in
+                                if distance(from: wordPosition, to: targetPosition) < 60 {
+                                    wordPosition = targetPosition
+                                    correctWords[word] = true
+                                }
+                            }
+                    )
 
-            // 正解メッセージ表示（デバッグ用）
-            if let isCorrect = correctWords[word], isCorrect {
-                Text("\(word) 正解！")
-                    .font(.title)
-                    .foregroundColor(.green)
-                    .position(x: targetPosition.x, y: targetPosition.y - 50)
-                    .transition(.opacity)
+                // 正解メッセージ表示（デバッグ用）
+                if let isCorrect = correctWords[word], isCorrect {
+                    Text("\(word) 正解！")
+                        .font(.title)
+                        .foregroundColor(.green)
+                        .position(x: screenWidth * 0.5, y: screenHeight * 0.1)
+                        .transition(.opacity)
+                }
             }
         }
     }
