@@ -21,13 +21,13 @@ struct LvOneCodeView: View {
                 ZStack {
                     DraggableWord(
                         word: "Color",
-                        wordPosition: CGPoint(x: screenWidth * 0.5, y: screenHeight * 0.8),
+                        initialPosition: CGPoint(x: screenWidth * 0.5, y: screenHeight * 0.8),
                         targetPosition: CGPoint(x: screenWidth * 0.5, y: screenHeight * 0.3),
                         correctWords: $correctWords
                     )
                     DraggableWord(
                         word: "Blue",
-                        wordPosition: CGPoint(x: screenWidth * 0.7, y: screenHeight * 0.8),
+                        initialPosition: CGPoint(x: screenWidth * 0.7, y: screenHeight * 0.8),
                         targetPosition: CGPoint(x: screenWidth * 0.7, y: screenHeight * 0.3),
                         correctWords: $correctWords
                     )
