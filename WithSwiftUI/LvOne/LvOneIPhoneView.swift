@@ -14,13 +14,46 @@ struct LvOneIPhoneView: View {
             let screenHeight = geometry.size.height
 
             ZStack {
-                Image("IPhone")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: screenWidth * 0.85, height: screenHeight * 0.85)
+                // 顔
                 Circle()
-                    .foregroundColor(.blue)
-                    .frame(width: screenWidth * 0.5, height: screenHeight * 0.5)
+                    .fill(Color.brown)
+                    .frame(width: 150, height: 150)
+
+                // 耳（左）
+                Circle()
+                    .fill(Color.brown)
+                    .frame(width: 50, height: 50)
+                    .offset(x: -60, y: -60)
+
+                // 耳（右）
+                Circle()
+                    .fill(Color.brown)
+                    .frame(width: 50, height: 50)
+                    .offset(x: 60, y: -60)
+
+                // 目（左）
+                Circle()
+                    .fill(Color.black)
+                    .frame(width: 20, height: 20)
+                    .offset(x: -30, y: -20)
+
+                // 目（右）
+                Circle()
+                    .fill(Color.black)
+                    .frame(width: 20, height: 20)
+                    .offset(x: 30, y: -20)
+
+                // 鼻
+                Circle()
+                    .fill(Color.black)
+                    .frame(width: 30, height: 30)
+                    .offset(y: 20)
+
+                // 口
+                Rectangle()
+                    .fill(Color.black)
+                    .frame(width: 20, height: 5)
+                    .offset(y: 40)
             }
             .frame(width: screenWidth, height: screenHeight)
         }
